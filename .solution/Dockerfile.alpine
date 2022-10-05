@@ -1,0 +1,18 @@
+FROM alpine:3.16
+
+RUN apk add --update --upgrade gcc musl-dev jpeg-dev zlib-dev libffi-dev cairo-dev pango-dev gdk-pixbuf-dev
+RUN apk add --update --no-cache python3-dev
+
+RUN python3 -m ensurepip
+
+RUN python3 -m pip install --no-cache --upgrade pip setuptools
+
+RUN python3 -m pip install poetry
+
+RUN poetry config virtualenvs.create false
+
+COPY . .
+
+RUN poetry install
+
+ENTRYPOINT ["python3", "run.py"]

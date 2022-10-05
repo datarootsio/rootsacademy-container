@@ -8,3 +8,5 @@ Build the following poetry app as a container.
 ## bonus exercise 
 
 Do the same as the above exercise but start from alpine image 
+
+compare the image sizes!
