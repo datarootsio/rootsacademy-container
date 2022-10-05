@@ -1,4 +1,4 @@
 def say_hello() -> int:
-    print("Hello, world")
+    print("Hello, world from docker")
 
     return 0
